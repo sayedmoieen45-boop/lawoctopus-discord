@@ -30,6 +30,8 @@ jobs:
       - name: Check Lawctopus and post to Discord
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          FEED_URLS: https://www.lawctopus.com/category/opportunities-events/fest-mun-other-competitions/feed/
+          KEYWORDS: "" 
         run: python webhook.py
 
       - name: Save seen.json

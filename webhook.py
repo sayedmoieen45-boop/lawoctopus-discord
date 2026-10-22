@@ -42,6 +42,8 @@ def clean(text, limit=300):
 
 
 def matches(entry):
+    if not KEYWORDS:
+        return True
     blob = f"{entry.get('title', '')} {entry.get('summary', '')}".lower()
     return any(k in blob for k in KEYWORDS)
 
